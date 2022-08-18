@@ -27,7 +27,39 @@ body {
     width: 100%;
     align-items: center;
     justify-content: center;
+
+}
+
+.main ul {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
     flex-flow: row wrap;
-    padding: 10px;
     gap: 35px;
+    padding: 20px;
+}
+
+.main li {
+    box-sizing: border-box;
+    width: 117px;
+    height: 146px;
+    background: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main li img {
+    width: 100px;
+    height: 100px;
+}
+
+@media (max-width: 767px) {
+    .header h1 {
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+    }
 }
