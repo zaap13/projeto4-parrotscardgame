@@ -2,7 +2,7 @@
 
 * {
     box-sizing: border-box;
-  }
+}
 
 body {
     background-color: #EEF9BF;
@@ -16,6 +16,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .header h1 {
@@ -25,6 +26,13 @@ body {
     letter-spacing: -0.004em;
 
     color: #75B79E;
+}
+
+.timer {
+    font-size: 26px;
+    position: absolute;
+    right: 10%;
+    bottom: 0;
 }
 
 .main {
@@ -79,7 +87,7 @@ body {
 .memory-card.flip {
     transform: rotateY(180deg);
 
-  }
+}
 
 
 @media (max-width: 767px) {

@@ -1,12 +1,15 @@
 let qtdCards = 0;
 const cards = [];
 let cont = 0;
+endGame = 0;
+
+window.onload = (startTimer);
+
 while (qtdCards < 4 || qtdCards > 14 || qtdCards % 2 !== 0) {
-    qtdCards = prompt("Com quantas cartas você quer jogar?", "Insira um número par de 4 a 14");
+    qtdCards = prompt("Com quantas cartas você quer jogar? Insira um número par de 4 a 14!");
 }
 
 cardsIndex = document.querySelector(".cards");
-
 
 for (i = 0; i < (qtdCards / 2); i++) {
     cards[i] = `<li class="memory-card" data-parrot="parrot${i}">
@@ -53,8 +56,6 @@ function flipCard() {
         checkCards();
         return;
     }
-
-
 }
 
 function checkCards() {
@@ -63,6 +64,15 @@ function checkCards() {
         secondCard.removeEventListener('click', flipCard);
         firstCard = '';
         secondCard = '';
+        endGame += 2;
+        if (endGame == (qtdCards)){
+            clearInterval(this.loop);
+            reset = prompt(`Parabéns, você venceu em ${cont} lances e ${timer.innerHTML} segundos!
+            Gostaria de reiniciar o jogo?`);
+            if (reset === 'sim'){
+                document.location.reload(true);
+            }
+        }
     } else {
         unflip();
     }
@@ -79,6 +89,16 @@ function unflip() {
     }, 1000);
   }
 
-
 memoryCards.forEach(card => card.addEventListener('click', flipCard));
+
+const timer = document.querySelector('.timer');
+
+function startTimer (){
+    this.loop = setInterval(() => {
+
+        const currentTime = Number(timer.innerHTML);
+        timer.innerHTML = currentTime + 1;
+
+    }, 1000)
+}
 
