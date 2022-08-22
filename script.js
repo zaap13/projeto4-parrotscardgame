@@ -9,16 +9,16 @@ while (qtdCards < 4 || qtdCards > 14 || qtdCards % 2 !== 0) {
     qtdCards = prompt("Com quantas cartas você quer jogar? Insira um número par de 4 a 14!");
 }
 
-cardsIndex = document.querySelector(".cards");
+const cardsIndex = document.querySelector(".cards");
 
 for (i = 0; i < (qtdCards / 2); i++) {
     cards[i] = `<li class="memory-card" data-parrot="parrot${i}">
-                <img class="back-face"  src="images/parrot${i}.gif" alt="Verso da Carta">
-                <img class="front-face" src="images/front.png" alt="Face da Carta">
+                <img class="back-face"  src="./images/parrot${i}.gif" alt="Verso da Carta">
+                <img class="front-face" src="./images/front.png" alt="Face da Carta">
             </li>`
     cards[i + (qtdCards / 2)] = `<li class="memory-card" data-parrot="parrot${i}">
-                <img class="back-face"  src="images/parrot${i}.gif" alt="Verso da Carta">
-                <img class="front-face" src="images/front.png" alt="Face da Carta">
+                <img class="back-face"  src="./images/parrot${i}.gif" alt="Verso da Carta">
+                <img class="front-face" src="./images/front.png" alt="Face da Carta">
             </li>`
 
 }

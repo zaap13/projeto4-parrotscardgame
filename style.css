@@ -54,12 +54,6 @@ body {
     position: relative;
 }
 
-.memory-card {
-    position: relative;
-    transform-style: preserve-3d;
-    transform: scale(1);
-}
-
 .front-face,
 .back-face {
     width: 100%;
@@ -82,6 +76,7 @@ body {
     position: relative;
     transform-style: preserve-3d;
     transition: all 0.5s;
+    border-radius: 5px;
 }
 
 .memory-card.flip {
